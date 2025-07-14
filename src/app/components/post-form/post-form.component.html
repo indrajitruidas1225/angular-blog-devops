@@ -1,0 +1,13 @@
+<h2>Add New Post</h2>
+<form (ngSubmit)="submitPost()">
+  <label>Title:
+    <input type="text" [(ngModel)]="post.title" name="title" required />
+  </label>
+  <br />
+  <label>Body:
+    <textarea [(ngModel)]="post.body" name="body" required></textarea>
+  </label>
+  <br />
+  <button type="submit">Submit</button>
+</form>
+<a routerLink="/">Back</a>
