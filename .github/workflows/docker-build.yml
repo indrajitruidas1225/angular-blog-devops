@@ -31,6 +31,8 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t angular-blog .
+      - name: Show Docker username (debug only)
+        run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}"
 
       - name: Build and push Docker images
         run: |
