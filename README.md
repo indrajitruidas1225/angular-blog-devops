@@ -71,7 +71,7 @@ Workflow file location: `.github/workflows/docker-image.yml`
 Deployment is done on an AWS EC2 instance using Docker and Docker Compose.
 
 **For full step-by-step EC2 setup instructions, refer to:**
-[ec2-setup.md](./ec2-deploy.md)
+[ec2-deploy.md](./ec2-deploy.md)
 
 ---
 
