@@ -1,27 +1,90 @@
-# NgBlog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+# Angular Blog DevOps Project
+![Architecture Diagram](./assets/architecture.png)
 
-## Development server
+This project is a simple blog application built using Angular for the frontend and `json-server` for a mock backend. The main focus is to demonstrate DevOps practices such as containerization, CI/CD pipeline automation, image publishing, and cloud deployment.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular-based blog frontend
+- JSON Server as a mock backend API
+- Docker-based containerization
+- GitHub Actions CI/CD pipeline for automated builds and Docker image publishing
+- Deployment on AWS EC2
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Project Structure
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+angular-blog-devops/
+├── frontend/                 # Angular application
+├── mock-backend/             # JSON Server with db.json
+├── Dockerfile                # Dockerfile for frontend
+├── docker-compose.yml        # Docker Compose setup
+├── .github/workflows/        # GitHub Actions pipeline
+│   └── docker-image.yml
+├── ec2-setup.md              # Step-by-step EC2 deployment instructions
+└── README.md
 
-## Running end-to-end tests
+````
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## Local Development
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Run with Docker Compose
+
+```bash
+docker-compose up --build
+````
+
+* Frontend: [http://localhost:8080](http://localhost:8080)
+* Backend API: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## CI/CD with GitHub Actions
+
+### Workflow
+
+* Triggered on push to the `main` branch
+* Builds the Docker image
+* Logs in to Docker Hub using secrets
+* Pushes the image to Docker Hub repository
+
+Workflow file location: `.github/workflows/docker-image.yml`
+
+---
+
+## Docker Hub
+
+* Images are pushed to: `docker.io/indrajitruidas/angular-blog`
+
+---
+
+## EC2 Deployment
+
+Deployment is done on an AWS EC2 instance using Docker and Docker Compose.
+
+**For full step-by-step EC2 setup instructions, refer to:**
+[ec2-setup.md](./ec2-deploy.md)
+
+---
+
+![image-1](./assets/image-1.jpeg)
+![image-2](./assets/image-2.jpeg)
+![image-3](./assets/image-3.jpeg)
+![image-4](./assets/image-4.jpeg)
+
+
+Author
+Indrajit Ruidas
+
+GitHub: indrajitruidas1225
+
+LinkedIn: https://www.linkedin.com/in/indrajitruidas1225
+
