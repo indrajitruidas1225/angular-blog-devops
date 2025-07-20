@@ -1,0 +1,6 @@
+{
+  "posts": [
+    { "id": 1, "title": "Hello World", "body": "This is a sample blog post." },
+    { "id": 2, "title": "Docker Rocks", "body": "Docker Compose makes life easier!" }
+  ]
+}

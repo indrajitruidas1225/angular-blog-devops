@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: angular_blog_ui
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: vimagick/json-server
+    container_name: blog_backend
+    volumes:
+      - ./src/mock-backend/db.json:/data/db.json
+    command: --watch /data/db.json --port 3000
+    ports:
+      - "3000:3000"
